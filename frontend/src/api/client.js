@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-	baseURL: 'https://sound-studio-zpou.onrender.com/',
+	baseURL: 'https://sound-studio-zpou.onrender.com/api/',
 	headers: { 'Content-Type': 'application/json' },
 });
 
