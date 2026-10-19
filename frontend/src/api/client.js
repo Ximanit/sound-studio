@@ -1,16 +1,16 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: '/api',
-  headers: { 'Content-Type': 'application/json' },
+	baseURL: 'https://sound-studio-zpou.onrender.com/',
+	headers: { 'Content-Type': 'application/json' },
 });
 
 export const createApi = (resource) => ({
-  getAll: () => api.get(`/${resource}`).then((r) => r.data),
-  getById: (id) => api.get(`/${resource}/${id}`).then((r) => r.data),
-  create: (data) => api.post(`/${resource}`, data).then((r) => r.data),
-  update: (id, data) => api.put(`/${resource}/${id}`, data).then((r) => r.data),
-  remove: (id) => api.delete(`/${resource}/${id}`).then((r) => r.data),
+	getAll: () => api.get(`/${resource}`).then((r) => r.data),
+	getById: (id) => api.get(`/${resource}/${id}`).then((r) => r.data),
+	create: (data) => api.post(`/${resource}`, data).then((r) => r.data),
+	update: (id, data) => api.put(`/${resource}/${id}`, data).then((r) => r.data),
+	remove: (id) => api.delete(`/${resource}/${id}`).then((r) => r.data),
 });
 
 export const servicesApi = createApi('services');
