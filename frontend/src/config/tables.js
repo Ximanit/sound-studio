@@ -1,0 +1,105 @@
+export const tables = {
+  services: {
+    key: 'services',
+    title: 'Услуги',
+    icon: 'Headphones',
+    idField: 'idУслуги',
+    fields: [
+      { key: 'Описание', label: 'Описание', type: 'text', required: true },
+      { key: 'Стоимость', label: 'Стоимость (₽)', type: 'number', required: true },
+      { key: 'Едицина_измерения', label: 'Ед. измерения', type: 'text', required: true },
+    ],
+  },
+  rooms: {
+    key: 'rooms',
+    title: 'Помещения',
+    icon: 'Building2',
+    idField: 'idПомещения',
+    fields: [
+      { key: 'Наименование', label: 'Наименование', type: 'text', required: true },
+      { key: 'Тип_помещения', label: 'Тип', type: 'text', required: true },
+      { key: 'Площадь', label: 'Площадь (м²)', type: 'number', required: true },
+      { key: 'Статус', label: 'Статус', type: 'select', options: ['Свободно', 'Занято', 'Ремонт'], required: true },
+    ],
+  },
+  employees: {
+    key: 'employees',
+    title: 'Сотрудники',
+    icon: 'Users',
+    idField: 'idСотрудника',
+    fields: [
+      { key: 'ФИО', label: 'ФИО', type: 'text', required: true },
+      { key: 'Должность', label: 'Должность', type: 'text', required: true },
+      { key: 'Контактные_данные', label: 'Контакты', type: 'text', required: true },
+    ],
+  },
+  catalog: {
+    key: 'catalog',
+    title: 'Каталог',
+    icon: 'Disc3',
+    idField: 'idКаталога',
+    fields: [
+      { key: 'Жанр', label: 'Жанр', type: 'text', required: true },
+      { key: 'Вид_лицензии', label: 'Вид лицензии', type: 'select', options: ['Эксклюзивная', 'Неисключительная'], required: true },
+      { key: 'Продакшн', label: 'Продакшн', type: 'text', required: true },
+      { key: 'Цена', label: 'Цена (₽)', type: 'number', required: true },
+      { key: 'Статус', label: 'Статус', type: 'select', options: ['Доступен', 'Продан', 'В резерве'], required: true },
+      { key: 'Дата_создания', label: 'Дата создания', type: 'date', required: true },
+    ],
+  },
+  clients: {
+    key: 'clients',
+    title: 'Клиенты',
+    icon: 'UserRound',
+    idField: 'idКлиента',
+    fields: [
+      { key: 'ФИО', label: 'ФИО', type: 'text', required: true },
+      { key: 'Контактные_данные', label: 'Контакты', type: 'text', required: true },
+      { key: 'Данные_для_договора', label: 'Данные для договора', type: 'textarea', required: true },
+    ],
+  },
+  equipment: {
+    key: 'equipment',
+    title: 'Оборудование',
+    icon: 'Mic2',
+    idField: 'idОборудования',
+    fields: [
+      { key: 'Сотрудники_idСотрудника', label: 'ID сотрудника', type: 'number', required: true },
+      { key: 'Помещение_idПомещения', label: 'ID помещения', type: 'number', required: true },
+      { key: 'Наименование', label: 'Наименование', type: 'text', required: true },
+      { key: 'Тип', label: 'Тип', type: 'text', required: true },
+      { key: 'Модель', label: 'Модель', type: 'text', required: true },
+      { key: 'Серийный_номер', label: 'Серийный номер', type: 'text', required: true },
+    ],
+  },
+  deals: {
+    key: 'deals',
+    title: 'Сделки',
+    icon: 'Handshake',
+    idField: 'idСделки',
+    fields: [
+      { key: 'Сотрудники_idСотрудника', label: 'ID сотрудника', type: 'number', required: true },
+      { key: 'Каталог_idКаталога', label: 'ID каталога', type: 'number', required: true },
+      { key: 'Клиенты_idКлиента', label: 'ID клиента', type: 'number', required: true },
+      { key: 'Дата', label: 'Дата', type: 'date', required: true },
+      { key: 'Сумма_сделки', label: 'Сумма (₽)', type: 'number', required: true },
+      { key: 'Номер_договора', label: 'Номер договора', type: 'text', required: true },
+    ],
+  },
+  provisions: {
+    key: 'provisions',
+    title: 'Оказание услуг',
+    icon: 'CalendarCheck',
+    idField: 'idОказание_услуги',
+    fields: [
+      { key: 'Помещение_idПомещения', label: 'ID помещения', type: 'number', required: true },
+      { key: 'Услуга_idУслуги', label: 'ID услуги', type: 'number', required: true },
+      { key: 'Сотрудники_idСотрудника', label: 'ID сотрудника', type: 'number', required: true },
+      { key: 'Сделка_idСделки', label: 'ID сделки', type: 'number', required: true },
+      { key: 'Количество', label: 'Количество', type: 'number', required: true },
+      { key: 'Дата_время_оказания', label: 'Дата оказания', type: 'date', required: true },
+    ],
+  },
+};
+
+export const navItems = Object.values(tables);
